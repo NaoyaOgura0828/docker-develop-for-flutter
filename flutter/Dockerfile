@@ -40,7 +40,8 @@ RUN apt-get install clang -y &&\
     apt-get install cmake -y &&\
     apt-get install ninja-build -y &&\
     apt-get install pkg-config -y &&\
-    apt-get install openjdk-17-jdk -y
+    apt-get install openjdk-17-jdk -y &&\
+    apt-get install libgtk-3-dev -y
 
 # Add User
 RUN adduser ${USER_NAME} --force-badname
