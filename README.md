@@ -260,3 +260,28 @@ The Flutter DevTools debugger and profiler on sdk gphone64 x86 64 is available a
 
 3. 動作確認<br>
 Hostの[AndroidEmulator](https://developer.android.com/studio/run/managing-avds?hl=ja)でApplicationの動作確認を実施する。
+
+# Tips
+`flutter doctor`を実行すると以下が出力される。
+
+```bash
+satoasu@81625ff88d24:~/testapp$ flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, 3.13.9, on Ubuntu 22.04.3 LTS 6.6.6-200.fc39.x86_64, locale en_US.UTF-8)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+[✗] Chrome - develop for the web (Cannot find Chrome executable at google-chrome)
+    ! Cannot find Chrome. Try setting CHROME_EXECUTABLE to a Chrome executable.
+[✓] Linux toolchain - develop for Linux desktop
+[!] Android Studio (not installed)
+[✓] Connected device (1 available)
+[✓] Network resources
+
+! Doctor found issues in 2 categories.
+```
+
+- Chrome:<br>
+Docker環境にはChromeがInstallされていない為、警告が出力される。<br>
+Docker環境からBridgeしてHost側(localhost)のブラウザを利用する為、無視して良い。
+- Android Studio:
+Docker環境にはAndroid StudioがInstallされていない為、警告が出力される。<br>
+Docker環境からBridgeしてHost側(localhost)のAndroid Studioを利用する為、無視して良い。
