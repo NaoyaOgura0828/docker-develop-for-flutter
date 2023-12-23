@@ -17,7 +17,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update -y &&\
     apt-get upgrade -y
 
-# Install Package
+# Install Packages
 RUN apt-get install curl -y &&\
     apt-get install git -y &&\
     apt-get install gnupg2 -y &&\
@@ -35,7 +35,7 @@ RUN apt-get install apt-transport-https -y &&\
     apt-get update -y &&\
     apt-get install dart -y
 
-# Install Flutter Required Package
+# Install Flutter Required Packages
 RUN apt-get install clang -y &&\
     apt-get install cmake -y &&\
     apt-get install ninja-build -y &&\
@@ -55,7 +55,7 @@ WORKDIR /home/${USER_NAME}
 # Change User
 USER ${USER_NAME}
 
-# # Set ENV
+# Set ENV
 ENV ll='ls -la --color'
 ENV PATH=$PATH:/usr/lib/dart/bin
 ENV PATH=/home/${USER_NAME}/.pub-cache/bin:$PATH
@@ -66,7 +66,7 @@ ENV PATH $PATH:${ANDROID_HOME}/cmdline-tools/latest/bin
 ENV PATH=$PATH:${ANDROID_HOME}/platform-tools
 ENV PATH=$PATH:${ANDROID_HOME}/build-tools/${ANDROID_SDK_BUILD_TOOLS_VERSION}
 
-# # Install Flutter
+# Install Flutter
 RUN dart pub global activate melos --verbose && \
     dart pub global activate fvm --verbose && \
     chmod 700 /home/${USER_NAME}/.pub-cache/bin/fvm && \
