@@ -15,7 +15,7 @@ Hostに[VSCode](https://code.visualstudio.com/Download)と以下のVSCode拡張�
 - [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
 
 Hostに[Android Studio](https://developer.android.com/studio/install?hl=ja)をInstallする。
-> **Note**<br>
+> [!NOTE]
 > [Android Studio](https://developer.android.com/studio/install?hl=ja)のInstallは、[JetBrains Toolbox App](https://www.jetbrains.com/ja-jp/toolbox-app/)を利用したInstallを推奨する。
 
 <br>
@@ -46,13 +46,13 @@ IMAGE_NAME = ${コンテナイメージ名}
 
 <br>
 
-> **Warning**<br>
+> [!WARNING]
 > コンテナイメージは以下の命名規則に従うこと。<br>
 > `^[a-z0-9][a-z0-9_.-]{1,}$`
 
 <br>
 
-> **Note**<br>
+> [!NOTE]
 > [DockerHub](https://hub.docker.com/)へコンテナイメージのPUSHを想定する場合は以下の命名規則に従うこと。
 > ```
 > IMAGE_NAME = ${DockerHubユーザー名}/${コンテナイメージ名}:${タグ名}
@@ -109,7 +109,7 @@ FLUTTER_VERSION = ${Flutter Version}
 ANDROID_COMMAND_LINE_TOOLS_VERSION = ${commandlinetools Version}
 ```
 
-> **Note**<br>
+> [!NOTE]
 > `linux`Platformを設定する事。<br>
 > ex.<br>
 > commandlinetools-linux-10406996_latest.zip
@@ -183,7 +183,7 @@ Container環境で下記コマンドを実行する。
 $ flutter create testapp
 ```
 
-> **Note**<br>
+> [!NOTE]
 > Demoでは`testapp`としているが、Application名は任意の名称で良い。
 
 <br>
@@ -209,7 +209,7 @@ For a more detailed help message, press "h". To quit, press "q".
 2. 動作確認<br>
 HostのBrowserでhttp://localhost:33113へアクセスし、動作確認を実施する。
 
-> **Note**<br>
+> [!NOTE]
 > http://localhost:33113のport番号はランダムである。
 
 <br>
