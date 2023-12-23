@@ -56,7 +56,6 @@ WORKDIR /home/${USER_NAME}
 USER ${USER_NAME}
 
 # Set ENV
-ENV ll='ls -la --color'
 ENV PATH=$PATH:/usr/lib/dart/bin
 ENV PATH=/home/${USER_NAME}/.pub-cache/bin:$PATH
 ENV FVM_HOME=/home/${USER_NAME}/.fvm
