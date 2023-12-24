@@ -5,7 +5,7 @@
 
 # Requirement
 以下のlocalhost環境で動作確認済み<br>
-- [Fedora](https://fedoraproject.org/ja/)38
+- [Fedora](https://fedoraproject.org/ja/)39
 - [Windows](https://www.microsoft.com/ja-jp/windows/)10
 
 <br>
@@ -285,3 +285,5 @@ Docker環境からBridgeしてHost側(localhost)のブラウザを利用する�
 - Android Studio:
 Docker環境にはAndroid StudioがInstallされていない為、警告が出力される。<br>
 Docker環境からBridgeしてHost側(localhost)のAndroid Studioを利用する為、無視して良い。
+
+<br>
