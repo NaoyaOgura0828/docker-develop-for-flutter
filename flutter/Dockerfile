@@ -11,7 +11,7 @@ ARG ANDROID_API_LEVEL=${ANDROID_API_LEVEL}
 ARG ANDROID_SDK_BUILD_TOOLS_VERSION=${ANDROID_SDK_BUILD_TOOLS_VERSION}
 
 # Set TimeZone
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime && echo ${TZ} > /etc/timezone
 
 # Repository Update
 RUN apt-get update -y &&\
