@@ -134,17 +134,6 @@ ANDROID_SDK_BUILD_TOOLS_VERSION = ${Build Tools Version}
 
 <br>
 
-## HostがLinux以外の場合(Optional)
-HostがLinux以外の場合は、[docker-compose.yml](./docker-compose.yml)内の`Valid only if the host OS is Linux`とコメントされている行をコメントアウトする。
-
-```yml
-    volumes:
-      - /etc/passwd:/etc/passwd:ro # Valid only if the host OS is Linux
-      - /etc/group:/etc/group:ro # Valid only if the host OS is Linux
-```
-
-<br>
-
 # Usage
 
 ## コンテナ実行
