@@ -8,7 +8,7 @@ services:
       context: ./flutter
       dockerfile: Dockerfile
       args:
-        - DOCKER_IMAGE_TAG=${DOCKER_IMAGE_TAG}
+        - BASE_IMAGE_TAG=${BASE_IMAGE_TAG}
         - USER_NAME=${USER_NAME}
         - FLUTTER_VERSION=${FLUTTER_VERSION}
         - ANDROID_COMMAND_LINE_TOOLS_VERSION=${ANDROID_COMMAND_LINE_TOOLS_VERSION}
