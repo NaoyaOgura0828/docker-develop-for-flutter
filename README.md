@@ -273,7 +273,7 @@ Hostの[AndroidEmulator](https://developer.android.com/studio/run/managing-avds?
 9. Application内のボタンの押下等を実行し、BreakPointを機能させる。
 
 > [!NOTE]
-> デバッグ対象のApplicationが表示されない場合、`実行とデバッグ(Ctrl+Shift+D)`上部の歯車アイコンから設定を行う必要がある。
+> デバッグ対象のApplicationが表示されない場合、`実行とデバッグ(Ctrl+Shift+D)`上部の歯車アイコンから設定を行う必要がある。<br>
 > 設定の一例は下記の通り
 >
 > ```json
@@ -307,7 +307,7 @@ Hostの[AndroidEmulator](https://developer.android.com/studio/run/managing-avds?
 <br>
 
 > [!TIP]
-> BreakPoint表示が<span style="color: red">●</span>にならない場合、BreakPointの設定位置が適切ではない。
+> BreakPoint表示が<span style="color: red">●</span>にならない場合、BreakPointの設定位置が適切ではない。<br>
 > BreakPoint表示が<span style="color: red">●</span>になる行でのみBreakPointは設定可能である。
 
 <br>
