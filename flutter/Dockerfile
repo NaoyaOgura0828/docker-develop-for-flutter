@@ -13,18 +13,23 @@ ARG ANDROID_SDK_BUILD_TOOLS_VERSION=${ANDROID_SDK_BUILD_TOOLS_VERSION}
 # Set TimeZone
 RUN ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime && echo ${TZ} > /etc/timezone
 
+# Set Locale
+RUN apt-get update -y &&\
+    apt-get install locales -y &&\
+    locale-gen ja_JP.UTF-8
+ENV LANG ja_JP.UTF-8
+ENV LANGUAGE ja_JP.UTF-8
+ENV LC_ALL ja_JP.UTF-8
+
 # Repository Update
 RUN apt-get update -y &&\
     apt-get upgrade -y
 
 # Install Packages
-RUN apt-get install curl -y &&\
+RUN apt-get update -y &&\
+    apt-get install curl -y &&\
     apt-get install git -y &&\
     apt-get install gnupg2 -y &&\
-    apt-get install libcanberra-gtk-module -y &&\
-    apt-get install libcanberra-gtk3-module -y &&\
-    apt-get install locales -y &&\
-    apt-get install packagekit-gtk3-module -y &&\
     apt-get install software-properties-common -y &&\
     apt-get install sudo -y &&\
     apt-get install unzip -y &&\
@@ -32,25 +37,25 @@ RUN apt-get install curl -y &&\
     apt-get install wget -y &&\
     apt-get install zip -y
 
-# Set Env
-RUN locale-gen ja_JP.UTF-8
-ENV LANG ja_JP.UTF-8
-ENV LANGUAGE ja_JP:ja
-
 # Install Dart
-RUN apt-get install apt-transport-https -y &&\
+RUN apt-get update -y &&\
+    apt-get install apt-transport-https -y &&\
     wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/dart.gpg &&\
     echo "deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main" | sudo tee /etc/apt/sources.list.d/dart_stable.list &&\
     apt-get update -y &&\
     apt-get install dart -y
 
 # Install Flutter Required Packages
-RUN apt-get install clang -y &&\
+RUN apt-get update -y &&\
+    apt-get install clang -y &&\
     apt-get install cmake -y &&\
+    apt-get install libcanberra-gtk-module -y &&\
+    apt-get install libcanberra-gtk3-module -y &&\
+    apt-get install libgtk-3-dev -y &&\
     apt-get install ninja-build -y &&\
-    apt-get install pkg-config -y &&\
     apt-get install openjdk-17-jdk -y &&\
-    apt-get install libgtk-3-dev -y
+    apt-get install packagekit-gtk3-module -y &&\
+    apt-get install pkg-config -y
 
 # Add User
 RUN adduser ${USER_NAME} --force-badname
