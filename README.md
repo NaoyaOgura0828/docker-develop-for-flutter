@@ -13,10 +13,19 @@
 Hostに[VSCode](https://code.visualstudio.com/Download)と以下のVSCode拡張機能をInstallする。
 - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 - [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
+- [Dart](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code)
+- [Flutter](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter)
+
+<br>
 
 Hostに[Android Studio](https://developer.android.com/studio/install?hl=ja)をInstallする。
 > [!NOTE]
 > [Android Studio](https://developer.android.com/studio/install?hl=ja)のInstallは、[JetBrains Toolbox App](https://www.jetbrains.com/ja-jp/toolbox-app/)を利用したInstallを推奨する。
+
+<br>
+
+HostのChromeに以下の拡張機能をInstallする。
+- [Dart Debug Extension](https://chromewebstore.google.com/detail/dart-debug-extension/eljbmlghnomdjgdjmbdekegdkbabckhm)
 
 <br>
 
@@ -249,6 +258,59 @@ The Flutter DevTools debugger and profiler on sdk gphone64 x86 64 is available a
 
 3. 動作確認<br>
 Hostの[AndroidEmulator](https://developer.android.com/studio/run/managing-avds?hl=ja)でApplicationの動作確認を実施する。
+
+<br>
+
+### Debug 実行
+1. サイドバーの`実行とデバッグ(Ctrl+Shift+D)`を押下する。
+2. サブメニュー上部のプルダウンからデバッグ対象のApplicationを選択する。
+3. プルダウン左側の`デバッグの開始(F5)`ボタンを押下する。
+4. Chromeでページがホワイトアウトした状態で表示される。
+5. Chromeの拡張機能[Dart Debug Extension](https://chromewebstore.google.com/detail/dart-debug-extension/eljbmlghnomdjgdjmbdekegdkbabckhm)を実行する。
+6. ダイアログ内の`OPEN DEVTOOLS`ボタンを押下する。
+7. ChromeでApplicationが実行される。
+8. SourceCodeの任意の箇所にBreakPointを設定する。
+9. Application内のボタンの押下等を実行し、BreakPointを機能させる。
+
+> [!NOTE]
+> デバッグ対象のApplicationが表示されない場合、`実行とデバッグ(Ctrl+Shift+D)`上部の歯車アイコンから設定を行う必要がある。
+> 設定の一例は下記の通り
+>
+> ```json
+> {
+>     "version": "0.2.0",
+>     "configurations": [
+>         {
+>             "name": "testapp",
+>             "cwd": "testapp",
+>             "request": "launch",
+>             "type": "dart"
+>         },
+>         {
+>             "name": "testapp (profile mode)",
+>             "cwd": "testapp",
+>             "request": "launch",
+>             "type": "dart",
+>             "flutterMode": "profile"
+>         },
+>         {
+>             "name": "testapp (release mode)",
+>             "cwd": "testapp",
+>             "request": "launch",
+>             "type": "dart",
+>             "flutterMode": "release"
+>         }
+>     ]
+> }
+> ```
+
+<br>
+
+> [!TIP]
+> BreakPoint表示が<span style="color: red">●</span>にならない場合、BreakPointの設定位置が適切ではない。
+> BreakPoint表示が<span style="color: red">●</span>になる行でのみBreakPointは設定可能である。
+
+<br>
 
 # Tips
 `flutter doctor`を実行すると以下が出力される。
