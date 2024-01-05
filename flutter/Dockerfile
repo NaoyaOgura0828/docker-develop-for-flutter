@@ -21,12 +21,21 @@ RUN apt-get update -y &&\
 RUN apt-get install curl -y &&\
     apt-get install git -y &&\
     apt-get install gnupg2 -y &&\
+    apt-get install libcanberra-gtk-module -y &&\
+    apt-get install libcanberra-gtk3-module -y &&\
+    apt-get install locales -y &&\
+    apt-get install packagekit-gtk3-module -y &&\
     apt-get install software-properties-common -y &&\
     apt-get install sudo -y &&\
     apt-get install unzip -y &&\
     apt-get install vim -y &&\
     apt-get install wget -y &&\
     apt-get install zip -y
+
+# Set Env
+RUN locale-gen ja_JP.UTF-8
+ENV LANG ja_JP.UTF-8
+ENV LANGUAGE ja_JP:ja
 
 # Install Dart
 RUN apt-get install apt-transport-https -y &&\

@@ -14,8 +14,11 @@ services:
         - ANDROID_COMMAND_LINE_TOOLS_VERSION=${ANDROID_COMMAND_LINE_TOOLS_VERSION}
         - ANDROID_API_LEVEL=${ANDROID_API_LEVEL}
         - ANDROID_SDK_BUILD_TOOLS_VERSION=${ANDROID_SDK_BUILD_TOOLS_VERSION}
+    environment:
+      - DISPLAY=${DISPLAY}
     volumes:
       - home:/home
+      - /tmp/.X11-unix:/tmp/.X11-unix
     user: ${USER_NAME}
     stdin_open: true
     tty: true
