@@ -307,8 +307,8 @@ Hostの[AndroidEmulator](https://developer.android.com/studio/run/managing-avds?
 <br>
 
 > [!TIP]
-> BreakPoint表示が<span style="color: red">●</span>にならない場合、BreakPointの設定位置が適切ではない。<br>
-> BreakPoint表示が<span style="color: red">●</span>になる行でのみBreakPointは設定可能である。
+> BreakPoint表示が🔴にならない場合、BreakPointの設定位置が適切ではない。<br>
+> BreakPoint表示が🔴になる行でのみBreakPointは設定可能である。
 
 <br>
 
